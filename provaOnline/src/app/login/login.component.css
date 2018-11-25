@@ -1,0 +1,22 @@
+.linha-total {
+  background-color: #b8d5d9;
+  height:88vh;
+}
+
+.div-coluna {
+  width:50%;
+  margin: 8% auto;
+}
+
+.cartao {
+  width: 20%;
+  background-color: #e5f0f2;
+}
+
+@media screen and (min-width: 720px) and (max-width: 1200px) {
+
+.cartao {
+  width: 30%;
+}
+
+}

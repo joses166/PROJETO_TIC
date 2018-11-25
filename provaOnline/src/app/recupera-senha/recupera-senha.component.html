@@ -1,0 +1,55 @@
+<div class="row" style="background-color: #b8d5d9;height:100vh;">
+
+  <div class="col-lg-12" style="width:50%;margin: 8% auto;">
+
+      <div class="card" style="width: 20%;background-color: #e5f0f2;">
+
+              <div class="card-body">
+
+                  <img src="../../../imagens/logo_unifacef.png" width="100%" style="margin:0 auto;" />
+                  <hr/>
+                  
+                  <h5> Recuperar Acesso </h5>
+
+                  <form (ngSubmit)="fazerLogin()" style="text-align:left;">
+
+                      <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="identificador" [(ngModel)]="usuario.identificador" id="exampleRadios1" value="1" checked>
+                          <label class="form-check-label" for="exampleRadios1">
+                              Aluno
+                          </label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="radio" name="identificador" [(ngModel)]="usuario.identificador" id="exampleRadios2" value="2">
+                          <label class="form-check-label" for="exampleRadios2">
+                              Professor
+                          </label>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleInputEmail1" >Usuário</label>
+                          <div class="input-group mb-3">
+                              <input type="text" class="form-control" id="nome" name="nome" aria-describedby="nome" placeholder="Insira o usuário" [(ngModel)]="usuario.nome" required>
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1"> 
+                                      <i class="fa fa-user" aria-hidden="true"></i>
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+
+                      <button type="submit" style="width:100%;" class="btn btn-success">Enviar</button>
+                      
+                  </form>
+
+                  <a href="/login" class="badge badge-primary" style="margin-top:10px;">
+                      Voltar para o login
+                  </a>
+
+              </div>
+
+          </div>
+
+  </div>
+
+</div>
