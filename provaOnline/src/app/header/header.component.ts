@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../login/auth.service';
 
@@ -11,7 +12,8 @@ export class HeaderComponent implements OnInit {
   liberaItensMenuProfessor: boolean = false;
   mostrarMenu: boolean = false;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+    private router: Router) {
 
   }
 
@@ -22,6 +24,12 @@ export class HeaderComponent implements OnInit {
     this.authService.liberaItensMenuEmitter.subscribe(
       liberar => this.liberaItensMenuProfessor = liberar
     );
+  }
+
+  doLogout() {
+    this.authService.logout();
+    console.log('usuario nao logado');
+    this.router.navigate(['/login']);
   }
 
 }

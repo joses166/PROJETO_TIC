@@ -81,4 +81,8 @@ export class AuthService {
  retornaDadosUsuario() {
   return this.dadosUsuario;
  }
+
+ logout() {
+   this.usuarioAutenticado = false;
+ }
 }
