@@ -10,7 +10,7 @@ export class NivelQuestaoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 
 }
