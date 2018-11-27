@@ -9,16 +9,16 @@ import { Router } from '@angular/router';
 })
 export class NivelQuestaoCreateComponent implements OnInit {
 
-  nivel = {};
+  nivelQuestao = {};
 
-  constructor(private http:HttpClient,
+  constructor(private http: HttpClient,
     private router: Router) { }
 
   ngOnInit() {
   }
 
   insereNivelQuestao(){
-    this.http.post('http://localhost:3000/nivel, this.nivelQuestao).subscribe(resposta => {
+    this.http.post('http://localhost:3000/nivel', this.nivelQuestao).subscribe(resposta => {
           this.router.navigate(['/nivel-questao-create']);
     }, (erro) => {
       console.log(erro);

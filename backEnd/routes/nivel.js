@@ -6,7 +6,7 @@ var pg = require('pg');
 var config = {
 	user: "postgres",
 	database: "GENERATE_QUIZ",
-	password: "postgres",
+	password: "123456",
 	port: 5432,
 	max: 10,
 	idleTimeoutMills: 30000,
@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
         if (erro){
             return console.error('erro ao conectar no banco', erro);
         }
-        var sql = 'select * from tb_Nivel_Questao order by Num_Nivel';
+        var sql = 'select * from Nivel_Questao order by Num_Nivel';
         conexao.query(sql, function(erro, resultado){
             feito();
             if (erro){
@@ -30,12 +30,12 @@ router.get('/', function (req, res, next) {
     });
 })
 
-router.get('/:_num_nivel, function (req, res, next) {
+router.get('/:_num_nivel', function (req, res, next) {
     canal.connect(function(erro, conexao, feito){
     if (erro){
         return console.error('erro ao conectar no banco', erro);
     }
-    var sql = 'select * from tb_Nivel_Questao where Num_Nivel = ' + req.params._num_nivel;
+    var sql = 'select * from Nivel_Questao where Num_Nivel = ' + req.params._num_nivel;
     conexao.query(sql, function(erro, resultado){
         feito();
         if (erro){
@@ -52,7 +52,7 @@ router.post('/', function (req, res, next) {
     if (erro){
         return console.error('erro ao conectar no banco', erro);
     }
-    var sql = 'insert into tb_Nivel_Questao (Nivel) values (\'' + req.body._nivel + '\')';
+    var sql = 'insert into Nivel_Questao (Nivel) values (\'' + req.body._nivel + '\')';
 
     conexao.query(sql, function(erro, resultado){
         feito();
@@ -69,7 +69,7 @@ router.put('/:id', function (req, res, next) {
         if (erro){
             return console.error('erro ao conectar no banco', erro);
         }
-        var sql = "update tb_Nivel_Questao set Nivel = '" + req.body._nivel + 
+        var sql = "update Nivel_Questao set Nivel = '" + req.body._nivel + 
                 "' where Num_Nivel = " + req.body._num_Nivel;
      
         conexao.query(sql, function(erro, resultado){
@@ -88,7 +88,7 @@ router.delete('/:id', function (req, res, next) {
         if (erro){
             return console.error('erro ao conectar no banco', erro);
         }
-    var sql = 'delete from tb_Nivel_Questao where Num_Nivel = ' + req.params._num_nivel;
+    var sql = 'delete from Nivel_Questao where Num_Nivel = ' + req.params._num_nivel;
         conexao.query(sql, function(erro, resultado){
             feito();
             if (erro){

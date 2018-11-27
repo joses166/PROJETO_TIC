@@ -13,7 +13,6 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { AuthService } from './login/auth.service';
 import { RecuperaSenhaComponent } from './recupera-senha/recupera-senha.component';
-import { CriarQuestoesComponent } from './criar-questoes/criar-questoes.component';
 import { HomeComponent } from './home/home.component';
 import { NivelQuestaoComponent } from './nivel-questao/nivel-questao.component';
 import { NivelQuestaoCreateComponent } from './nivel-questao-create/nivel-questao-create.component';
@@ -29,7 +28,6 @@ import { QuestoesEditaComponent } from './questoes-edita/questoes-edita.componen
       HeaderComponent,
       FooterComponent,
       RecuperaSenhaComponent,
-      CriarQuestoesComponent,
       HomeComponent,
       NivelQuestaoComponent,
       NivelQuestaoCreateComponent,

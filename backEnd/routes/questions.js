@@ -6,7 +6,7 @@ var pg = require('pg');
 var config = {
 	user: "postgres",
 	database: "GENERATE_QUIZ",
-	password: "postgres",
+	password: "123456",
 	port: 5432,
 	max: 10,
 	idleTimeoutMills: 30000,

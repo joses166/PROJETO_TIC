@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class QuestoesComponent implements OnInit {
 
-  _alternativas : any
-  questao : any
+  _alternativas: any;
+  questao: any;
 
   constructor(private http: HttpClient,
               private router: Router) { }
@@ -23,27 +23,27 @@ export class QuestoesComponent implements OnInit {
     this.http.get('http://localhost:3000/question/')
       .subscribe(dados => {
         this.questao = dados;
-    })
+    });
   }
 
-  redirecionaQuestao(id){
+  redirecionaQuestao(id) {
     this.router.navigate(['/questoes-edita', id]);
   }
 
 
-  removeQuestao(id){
-    this.http.delete('http://localhost:3000/question/'+id)
+  removeQuestao(id) {
+    this.http.delete('http://localhost:3000/question/' + id)
       .subscribe(resposta => {
         this.ngOnInit();
-        console.log("Remoção com sucesso");
-    })
+        console.log('Remoção com sucesso');
+    });
 
     this._alternativas.forEach(function (value) {
-        this.http.delete('http://localhost:3000/alternativas/'+idquestao)
+        this.http.delete('http://localhost:3000/alternativas/' + id)
         .subscribe(resposta => {
           this.ngOnInit();
-          console.log("Remoção com sucesso");
-        })
+          console.log('Remoção com sucesso');
+        });
     });
   }
 

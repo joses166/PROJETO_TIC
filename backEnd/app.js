@@ -1,6 +1,5 @@
 var express = require('express')
 var app = express()
-// vamos permitir acesso de qq lugar
 var cors = require('cors')
 app.use(cors())
 
@@ -8,10 +7,12 @@ var bodyParser = require('body-parser')
 var urlPost = bodyParser.urlencoded({ extended: true }) 
 app.use(bodyParser.json());
 
-var student = require('./routes/student');
+var questions = require('./routes/questions');
+var nivel = require('./routes/nivel');
+var alternativas = require('./routes/alternativas');
 
-// As rotas get, post, put e delete de estudante deverão ser
-// com /student
-app.use('/student', student);
+app.use('/questions', questions);
+app.use('/nivel', nivel);
+app.use('/alternativas', alternativas);
 
 app.listen(3000)

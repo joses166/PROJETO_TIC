@@ -1,3 +1,5 @@
+import { Alternativas } from './alternativas.model';
+
 export class Questoes {
   private _id_questoes: number;
   private _enunciado: String;
@@ -8,31 +10,31 @@ export class Questoes {
   get id_questoes(): number {
       return this._id_questoes;
   }
-  set id_questoes(p : number) {
+  set id_questoes(p: number) {
       this._id_questoes = p;
   }
-  get enunciado(): string {
+  get enunciado(): String {
       return this._enunciado;
   }
-  set enunciado(p : string) {
+  set enunciado(p: String) {
       this._enunciado = p;
   }
-  get curso(): number {
+  get curso(): String {
       return this._curso;
   }
-  set curso(p : number) {
+  set curso(p: String) {
       this._curso = p;
   }
   get nivel(): number {
       return this._nivel;
   }
-  set nivel(p : number) {
+  set nivel(p: number) {
       this._nivel = p;
   }
   get alternativas(): Alternativas[] {
       return this._alternativas;
   }
-  set alternativas(p : Aternativas[]) {
+  set alternativas(p: Alternativas[]) {
       this._alternativas = p;
   }
 }
